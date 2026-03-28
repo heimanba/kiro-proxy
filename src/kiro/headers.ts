@@ -1,5 +1,5 @@
 export function buildKiroHeaders(input: { accessToken: string; invocationId: string }) {
-  const fingerprint = "kiro-ide-proxy";
+  const fingerprint = "kiro-proxy";
   return {
     authorization: `Bearer ${input.accessToken}`,
     "content-type": "application/json",

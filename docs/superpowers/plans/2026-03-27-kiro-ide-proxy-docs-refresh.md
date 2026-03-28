@@ -1,8 +1,8 @@
-# kiro-ide-proxy Docs Refresh Implementation Plan
+# kiro-proxy Docs Refresh Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 刷新 `kiro-ide-proxy` 的面向使用者文档：README 实现 5 分钟上手闭环（含 `curl -N` 流式验证），并新增 4 篇长期维护的 `docs/*.md`（鉴权与凭据、API 兼容、Streaming、开发者指南），内容严格对齐当前实现。
+**Goal:** 刷新 `kiro-proxy` 的面向使用者文档：README 实现 5 分钟上手闭环（含 `curl -N` 流式验证），并新增 4 篇长期维护的 `docs/*.md`（鉴权与凭据、API 兼容、Streaming、开发者指南），内容严格对齐当前实现。
 
 **Architecture:** README 只保留“快速开始 + 关键契约 + 最小验证 + 错误速查 + 文档索引”；深水区细节（凭据字段分层、上游非 2xx 透传、SSE 调试要点、开发与联调）下沉到 `docs/` 的小而专一文档。
 
@@ -12,7 +12,7 @@
 
 ## Spec
 
-- Spec: `docs/superpowers/specs/2026-03-27-kiro-ide-proxy-docs-refresh-design.md`
+- Spec: `docs/superpowers/specs/2026-03-27-kiro-proxy-docs-refresh-design.md`
 
 ---
 

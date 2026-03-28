@@ -1,6 +1,6 @@
 ## 背景
 
-`kiro-ide-proxy` 是一个基于 Bun 的本地/自托管 Kiro API 代理网关，对外提供 OpenAI/Anthropic 兼容端点，并在本地管理/刷新上游 Kiro 访问凭据。
+`kiro-proxy` 是一个基于 Bun 的本地/自托管 Kiro API 代理网关，对外提供 OpenAI/Anthropic 兼容端点，并在本地管理/刷新上游 Kiro 访问凭据。
 
 当前仓库已有：
 

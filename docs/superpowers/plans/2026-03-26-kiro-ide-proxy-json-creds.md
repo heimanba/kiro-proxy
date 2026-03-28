@@ -1,8 +1,8 @@
-# kiro-ide-proxy JSON creds + OpenAI/Anthropic proxy Implementation Plan
+# kiro-proxy JSON creds + OpenAI/Anthropic proxy Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use `@superpowers/subagent-driven-development` (aka `superpowers:subagent-driven-development`, recommended) or `@superpowers/executing-plans` (aka `superpowers:executing-plans`) to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 在 Bun 项目 `kiro-ide-proxy` 中实现一个本地/自托管 Kiro API 代理网关，提供 OpenAI/Anthropic 兼容端点，并支持从 `KIRO_CREDS_FILE` 读取/刷新/回写 Kiro 凭据（含 Enterprise `clientIdHash` → `~/.aws/sso/cache/*.json` 的 AWS SSO OIDC 刷新）。
+**Goal:** 在 Bun 项目 `kiro-proxy` 中实现一个本地/自托管 Kiro API 代理网关，提供 OpenAI/Anthropic 兼容端点，并支持从 `KIRO_CREDS_FILE` 读取/刷新/回写 Kiro 凭据（含 Enterprise `clientIdHash` → `~/.aws/sso/cache/*.json` 的 AWS SSO OIDC 刷新）。
 
 **Architecture:** 使用 `Bun.serve()` 作为单体 HTTP 服务。路由层负责鉴权与协议兼容（OpenAI/Anthropic）；中间层负责 Kiro 上游调用（含 headers、URL、streaming）；认证层 `KiroAuthManager` 负责加载/刷新/并发锁/原子回写凭据文件，确保所有请求共享同一个 token 状态。
 
@@ -19,7 +19,7 @@ Expected: If it says "not a git repository", run `git init` then re-run `git sta
 
 ## Spec
 
-- Spec: `docs/superpowers/specs/2026-03-26-kiro-ide-proxy-json-creds-design.md`
+- Spec: `docs/superpowers/specs/2026-03-26-kiro-proxy-json-creds-design.md`
 
 ## File structure (locked in)
 
@@ -711,7 +711,7 @@ export function buildKiroHeaders(input: { accessToken: string; invocationId: str
   return {
     authorization: `Bearer ${input.accessToken}`,
     "content-type": "application/json",
-    "user-agent": "kiro-ide-proxy/0.0.0",
+    "user-agent": "kiro-proxy/0.0.0",
     "x-amz-user-agent": "aws-sdk-js/3.x",
     "x-amzn-codewhisperer-optout": "true",
     "x-amzn-kiro-agent-mode": "vibe",

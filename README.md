@@ -1,6 +1,6 @@
 <div align="center">
 
-# kiro-ide-proxy
+# kiro-proxy
 
 **本地 Kiro API 代理网关（OpenAI / Anthropic 兼容端点）**
 
@@ -38,7 +38,7 @@ flowchart TB
     C3["POST /v1/messages\nstream: true"]
   end
 
-  subgraph Proxy["kiro-ide-proxy（Bun.serve）"]
+  subgraph Proxy["kiro-proxy（Bun.serve）"]
     H["路由: /, /health, /v1/*"]
     PA["代理鉴权\nPROXY_API_KEY\nBearer 或 x-api-key"]
     OR["OpenAI 路由\nmodels / chatCompletions"]
@@ -188,7 +188,7 @@ bun build --compile ./index.ts --outfile=dist/kiro-proxy-linux --target=bun-linu
 
 ## Claude Code 集成
 
-[Claude Code](https://code.claude.com/docs) 走 Anthropic 兼容 API 时，可通过环境变量把请求发到本代理。请先在本机启动 `kiro-ide-proxy`（并配置好 `KIRO_ACCESS_TOKEN` 或 `KIRO_CREDS_FILE` 等上游凭据）。
+[Claude Code](https://code.claude.com/docs) 走 Anthropic 兼容 API 时，可通过环境变量把请求发到本代理。请先在本机启动 `kiro-proxy`（并配置好 `KIRO_ACCESS_TOKEN` 或 `KIRO_CREDS_FILE` 等上游凭据）。
 
 ### 与 `PROXY_API_KEY` 的对应关系
 

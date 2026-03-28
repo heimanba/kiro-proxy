@@ -1,6 +1,6 @@
 ## 背景与目标
 
-我们要在 Bun 项目 `kiro-ide-proxy` 中实现一个本地/自托管的 Kiro API 代理网关，向外提供：
+我们要在 Bun 项目 `kiro-proxy` 中实现一个本地/自托管的 Kiro API 代理网关，向外提供：
 
 - OpenAI 兼容接口：`/v1/models`、`/v1/chat/completions`
 - Anthropic 兼容接口：`/v1/messages`
@@ -309,7 +309,7 @@ Enterprise device registration 文件：
 
 ## 交付物
 
-- 在 `kiro-ide-proxy` 新增上述模块并提供可运行的 `bun run index.ts`（或 `bun run src/server.ts`）。
+- 在 `kiro-proxy` 新增上述模块并提供可运行的 `bun run index.ts`（或 `bun run src/server.ts`）。
 - README 增加配置示例与“JSON 凭据文件（Kiro IDE / Enterprise）”说明。
 
 ## 开放问题（实现阶段需要最后拍板）

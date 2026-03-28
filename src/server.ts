@@ -73,7 +73,7 @@ export function createFetchHandler(config: AppConfig): (req: Request) => Respons
       } else if (url.pathname === "/health" && (req.method === "GET" || req.method === "HEAD")) {
         const body = {
           status: "ok",
-          service: "kiro-ide-proxy",
+          service: "kiro-proxy",
           region: config.kiroRegion,
         };
         res = new Response(req.method === "HEAD" ? null : JSON.stringify(body), {
