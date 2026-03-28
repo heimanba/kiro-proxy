@@ -1,0 +1,17 @@
+{
+  "name": "kiro-proxy",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "build:binary": "mkdir -p dist && bun build --compile ./index.ts --outfile=dist/kiro-proxy",
+    "smoke:live": "./smoke-live.sh"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
